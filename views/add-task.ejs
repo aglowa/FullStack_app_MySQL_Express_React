@@ -1,0 +1,40 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-task-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="task_name" id="task-name" placeholder="Task Name" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="task_description" id="task-description" placeholder="Task Description" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="deadline" class="form-control" name="deadline" id="deadline" placeholder="Deadline" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <select id="priority" name="priority" class="form-control" required>
+                        <option selected disabled>Choose priority</option>
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <label for="task-img"><b>Task Image</b></label><br>
+                    <input type="file" name="image" id="task-img" class="" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Add Task</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

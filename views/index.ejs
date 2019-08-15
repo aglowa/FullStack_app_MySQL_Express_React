@@ -1,0 +1,41 @@
+<% include partials/header.ejs %>
+    <div class="table-wrapper">
+        <% if (tasks.length > 0) {%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Task Name</th>
+                        <th scope="col">Task Description</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Deadline</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% tasks.forEach((task, index) => { %>
+                        <tr>
+                            <th scope="row"><%= task.id %></th>
+                            <td><img src="/assets/img/<%= task.image %>" class="rounded-circle task-img" alt=""></td>
+                            <td><%= task.task_name %></td>
+                            <td><%= task.task_description %></td>
+                            <td><%= task.priority %></td>
+                            <td><%= task.deadline %></td>
+                            <td>@<%= task.user_name %></td>
+                            <td>
+                                <a href="/todolist/edit/<%= task.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                                <a href="/todolist/delete/<%= task.id %>" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="text-center">No tasks found. Go <a href="todolist/add" >here</a> to add tasks.</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
