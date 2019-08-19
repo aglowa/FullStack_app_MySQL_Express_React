@@ -32,6 +32,11 @@ class Landing extends Component {
           </Link>
                 </li>
                 <li className="nav-item">
+                    <a href="http://localhost:3001/todolist" className="nav-link">
+                        To Do List
+          </a>
+                </li>
+                <li className="nav-item">
                     <a href="" onClick={this.logOut.bind(this)} className="nav-link">
                         Logout
           </a>
